@@ -9,7 +9,16 @@ class Grafite:
         self.tamanho = tamanho
 
     def desgastePorFolha(self):
-        if self.getDureza() ==
+        if self.getDureza() == Dureza.G_HB:
+            return 1
+        elif self.getDureza() == Dureza.G_2B:
+            return 2
+        elif self.getDureza() == Dureza.G_4B:
+            return 4
+        elif self.getDureza() == Dureza.G_6B:
+            return 6
+        else:
+            return "Inválido"
 
     def getDureza(self):
         return self.dureza

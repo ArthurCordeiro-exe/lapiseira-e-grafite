@@ -9,16 +9,29 @@ class Lapiseira:
         self.grafiteDentro = []
 
     def inserir (self, grafite: Grafite):
+        if self.calibre == grafite.getCalibre():
+            if len(self.grafiteDentro) == 0:
+                self.grafiteDentro.append(grafite)
+                self.folhasEscritas = 0
+                return True
+            return False
         return False
 
     def remover(self):
-        return False
+        if self.grafiteDentro != []:
+            self.grafiteDentro.pop()
+            return False
+        else:
+            return True
 
     def escrever(self, folhas: int):
         return False
 
     def getGrafite(self):
-        return None
+        if len(self.grafiteDentro) > 0:
+            return self.grafiteDentro
+        else:
+            return None
 
     def getCalibre(self):
         return self.calibre
