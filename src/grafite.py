@@ -4,19 +4,21 @@ from src.dureza import Dureza
 class Grafite:
 
     def __init__(self, calibre: float, dureza: Dureza, tamanho: int):
-        pass
+        self.calibre = calibre
+        self.dureza = dureza
+        self.tamanho = tamanho
 
     def desgastePorFolha(self):
-        return -1
+        if self.getDureza() ==
 
     def getDureza(self):
-        return None
+        return self.dureza
 
     def getCalibre(self):
-        return -1.0
+        return self.calibre
 
     def getTamanho(self):
-        return -1
+        return self.tamanho
 
     def setTamanho(self, tamanho:int):
-        pass
+        self.tamanho = tamanho

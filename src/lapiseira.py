@@ -4,7 +4,9 @@ from src.grafite import Grafite
 class Lapiseira:
 
     def __init__(self, calibre:float):
-        pass
+        self.calibre = calibre
+        self.folhasEscritas = 0
+        self.grafiteDentro = []
 
     def inserir (self, grafite: Grafite):
         return False
@@ -19,7 +21,7 @@ class Lapiseira:
         return None
 
     def getCalibre(self):
-        return -1
+        return self.calibre
 
     def getFolhasEscritas(self):
-        return -1
+        return self.folhasEscritas
