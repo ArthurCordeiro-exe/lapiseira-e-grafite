@@ -18,18 +18,32 @@ class Lapiseira:
         return False
 
     def remover(self):
-        if self.grafiteDentro != []:
-            self.grafiteDentro.pop()
-            return False
-        else:
+        if self.grafiteDentro:
+            self.grafiteDentro = []
             return True
+        else:
+            return False
 
     def escrever(self, folhas: int):
+        if self.getGrafite() is not None:
+            grafite = self.grafiteDentro[0]
+            if grafite.tamanho > 0:
+                folhaspossiveis = grafite.tamanho // grafite.desgastePorFolha()
+                folhasescritas = min(folhas, folhaspossiveis)
+                grafite.tamanho -= folhasescritas * grafite.desgastePorFolha()
+                self.folhasEscritas += folhasescritas
+                if grafite.tamanho == 0:
+                    self.grafiteDentro.pop()
+                if folhaspossiveis != folhas:
+                    return False
+                return True
         return False
 
+
     def getGrafite(self):
-        if len(self.grafiteDentro) > 0:
-            return self.grafiteDentro
+        if len(self.grafiteDentro) != 0:
+            grafite = self.grafiteDentro[0].getCalibre()
+            return grafite
         else:
             return None
 
